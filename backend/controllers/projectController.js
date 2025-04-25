@@ -20,6 +20,17 @@ exports.create = (req, res) => {
   }
 };
 
+// Get Project
+exports.getProject = (req, res) => {
+  const { id } = req.params;
+  const project = projectService.getProjectById(id);
+
+  if (!project) {
+    return res.status(404).json({ message: "Project not found" });
+  }
+  return res.status(200).json(project);
+};
+
 // Get Projects
 exports.getProjects = (req, res) => {
   const projects = projectService.getAllProjects();

@@ -24,6 +24,11 @@ exports.createProject = (
   return project;
 };
 
+// Get Project by Id
+exports.getProjectById = (id) => {
+  return projects.find((project) => project.id === id);
+};
+
 // Get Projects
 exports.getAllProjects = () => {
   return projects;
